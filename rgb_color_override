@@ -1,0 +1,15 @@
+from pymel.core import*
+
+
+outer_color = [1.0, 0.514, 0.2]
+mid_color = [0.265, 0.628, 1]
+inner_color = [0.2, 0.660, 0.892]
+
+selected_objects = selected()
+
+for s in selected_objects:
+    shapes = s.getShapes()
+    for s in shapes:
+        s.overrideEnabled.set(1)
+        s.overrideRGBColors.set(1)
+        s.overrideColorRGB.set(mid_color)
